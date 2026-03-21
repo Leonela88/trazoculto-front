@@ -1,14 +1,21 @@
-import { Link } from "react-router"
+import Nav from "../molecules/Nav";
+import Title from "../atoms/Title";
+import LinkButton from "../atoms/LinkButton";
+import styles from "./header.module.css";
 
 const Header = () => {
   return (
-   <>
-   <Link to ="/">Home</Link>
-   <Link to ="/services">Services</Link>
-   <Link to ="/contact">Contact</Link>
-   <Link to ="/sesion">Sesion</Link>
-   
-   </>
+    <>
+      <header className={styles.hero}>
+        <Nav />
+        <div className={styles.content}>
+          <Title level={1}>El editor no dice lo que todos saben...revela lo que no se puede decir.</Title>
+          <div className={styles.buttonWrapper}>
+            <LinkButton to="/services">Ver Servicios</LinkButton>
+          </div>
+        </div>
+      </header>
+</>
   )
 }
 

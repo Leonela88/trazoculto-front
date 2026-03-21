@@ -1,0 +1,13 @@
+.title {
+  color: var(--color-white); 
+  text-align: center;
+  line-height: 1.2;
+  margin: 0;
+  font-family: var(--font);
+  text-shadow: var(--shadow-hero);
+}
+
+.dark {
+  color: var(--color-font);
+  text-shadow: none;
+}

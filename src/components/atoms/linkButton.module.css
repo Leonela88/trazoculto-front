@@ -1,0 +1,26 @@
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--color-primary); 
+  color: var(--color-white);
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  
+  
+  box-shadow: var(--soft-shadow);
+}
+
+.button:hover {
+  background-color: var(--color-primary-dark);       
+  opacity: 0.9;                       
+  transform: translateY(-2px);         
+}
+
+.button:active {
+  transform: scale(0.98); 
+}
