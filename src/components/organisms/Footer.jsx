@@ -1,6 +1,20 @@
+import styles from "./footer.module.css"
+
 const Footer = () => {
   return (
-    <div>Footer por aqui!</div>
+    <footer className={styles.footer}>
+      <div className={styles.left}>
+        <span>©</span>
+        <span className={styles.divider}>|</span>
+        <span>trazoculto</span>
+      </div>
+      <div className={styles.center}>2026</div>
+      <div className={styles.right}>
+        by Mariel <br /> Pannunzio
+      </div>
+
+    </footer>
+
   )
 }
 
