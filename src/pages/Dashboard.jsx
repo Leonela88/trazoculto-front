@@ -11,10 +11,50 @@ import { useNavigate } from "react-router";
 import Filter from "../assets/filter.png"
 import Delete from "../assets/delete.png"
 import Edit from "../assets/edit.png"
+import close from "../assets/close.png"
+import check from "../assets/check.png"
 
 const Dashboard = () => {
+
+  const [editingId, setEditingId] = useState(null);
+  const [editForm, setEditForm] = useState({ projectTitle: "", clientName: "", state: "" });
+  const [filterState, setFilterState] = useState("ALL");
+
+  const handleEditClick = (project) => {
+    setEditingId(project.id);
+    setEditForm({
+      projectTitle: project.projectTitle,
+      clientName: project.clientName,
+      state: project.state
+    });
+  };
+
+  const handleSave = async (id) => {
+    try {
+      await projectService.update(id, editForm);
+
+
+      setProjects(projects.map(p => (p.id === id ? { ...p, ...editForm } : p)));
+
+      setEditingId(null);
+    } catch (error) {
+      console.error("Error", error);
+    }
+  };
+
   const [projects, setProjects] = useState([]);
+
   const navigate = useNavigate();
+
+  const handleDelete = async (id) => {
+    if (!window.confirm("¿El proyecto se eliminará, deseas continuar?")) return;
+    try {
+      await projectService.delete(id);
+      setProjects(projects.filter((project) => project.id !== id));
+    } catch (error) {
+      console.error("Error al eliminar el proyecto", error);
+    }
+  };
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -35,6 +75,9 @@ const Dashboard = () => {
     loadProjects();
   }, []);
 
+  const filteredProjects = projects.filter(p =>
+    filterState === "ALL" || p.state === filterState
+  );
   return (
     <div className={styles.container}>
 
@@ -81,26 +124,70 @@ const Dashboard = () => {
 
           <Card key={project.id} className={styles.projectCard}>
             <div className={styles.projectContent}>
-              <span>{project.clientName}</span>
-              <span>{project.projectTitle}</span>
-              <span >{project.state}</span>
+              {editingId === project.id ? (
+                <>
+                  <span className={styles.disabledField}>{editForm.clientName}</span>
+                  <input
+                    className={styles.editInput}
+                    value={editForm.projectTitle}
+                    onChange={(e) => setEditForm({ ...editForm, projectTitle: e.target.value })}
+                  />
+                  <select
+                    className={styles.editSelect}
+                    value={editForm.state}
+                    onChange={(e) => setEditForm({ ...editForm, state: e.target.value })}
+                  >
+                    <option value="PENDING">PENDING</option>
+                    <option value="IN_PROGRESS">IN_PROGRESS</option>
+                    <option value="COMPLETED">COMPLETED</option>
+                    <option value="CANCELLED">CANCELLED</option>
+                  </select>
+                </>
+              ) : (
+                <>
+                  <span>{project.clientName}</span>
+                  <span>{project.projectTitle}</span>
+                  <span>{project.state}</span>
+                </>
+              )}
             </div>
+
             <div className={styles.actions}>
-              <img
-                src={Edit}
-                alt="EditIcon"
-                onClick={""}
-                style={{ cursor: 'pointer' }}
-              />
-              <img
-                src={Delete}
-                alt="Delete"
-                onClick={""}
-                style={{ cursor: 'pointer' }}
-              />
+              {editingId === project.id ? (
+                <>
+                  <img
+                    src={check}
+                    alt="Save"
+                    className={styles.actionIcon}
+                    onClick={() => handleSave(project.id)}
+                    style={{ cursor: 'pointer' }}
+                  />
+                  <img
+                    src={close}
+                    alt="Cancel"
+                    className={styles.actionIcon}
+                    onClick={() => setEditingId(null)}
+                    style={{ cursor: 'pointer' }}
+                  />
+                </>
+              ) : (
+                <>
+                  <img
+                    src={Edit}
+                    alt="EditIcon"
+                    onClick={() => handleEditClick(project)}
+                    style={{ cursor: 'pointer' }}
+                  />
+                  <img
+                    src={Delete}
+                    alt="Delete"
+                    onClick={() => handleDelete(project.id)}
+                    style={{ cursor: 'pointer' }}
+                  />
+                </>
+              )}
             </div>
           </Card>
-
         ))}
       </div>
 
