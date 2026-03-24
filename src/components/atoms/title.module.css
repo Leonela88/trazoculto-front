@@ -1,9 +1,12 @@
 .title {
-  color: var(--color-white); 
   text-align: center;
   line-height: 1.2;
   margin: 0;
   font-family: var(--font);
+}
+
+.light {
+  color: var(--color-white);
   text-shadow: var(--shadow-hero);
 }
 

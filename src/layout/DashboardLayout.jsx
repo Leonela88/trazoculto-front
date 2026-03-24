@@ -1,35 +1,26 @@
-import { Outlet, Link, useNavigate } from "react-router";
-// import styles from "./DashboardLayout.module.css";
+import { Outlet, Link, useNavigate, Navigate } from "react-router";
 
 const DashboardLayout = () => {
     const navigate = useNavigate();
+    const token = localStorage.getItem("token")
+
+    if (!token) {
+        return <Navigate to="/sesion" replace />;
+    }
 
     const handleLogout = () => {
-        //lógica para limpiar el Context
-        console.log("Sesión cerrada");
 
-
+        localStorage.removeItem("token");
+        localStorage.removeItem("userEmail");
         navigate("/", { replace: true });
 
     };
 
     return (
-        <div >
-            <aside >
-                <nav>
-                    <Link to="/dashboard">Panel Principal</Link>
-                    <Link to="/dashboard/projects">Proyectos</Link>
-                    <hr />
-                    <Link to="/">Ver Web Pública</Link>
-                    <button onClick={handleLogout}>
-                        Cerrar Sesión
-                    </button>
-                </nav>
-            </aside>
-            <main>
-                <Outlet />
-            </main>
-        </div>
+        <>
+         <Outlet />
+        </>
+
     );
 };
 
