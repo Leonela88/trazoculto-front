@@ -91,8 +91,8 @@ const Project = () => {
                 <option value="3">STYLE_CORRECTION</option>
                 <option value="4">ORTHOTYPOGRAPHIC_CORRECTION</option>
                 <option value="5">NEW_AUTHORS_GUIDANCE</option>
-                <option value="6">MACRO_EDITING,</option>
-                <option value="7">MICRO_EDITING,</option>
+                <option value="6">MACRO_EDITING</option>
+                <option value="7">MICRO_EDITING</option>
                 <option value="8">OTHERS</option>
               </select>
               <img src={dropdown} className={styles.arrowIcon} alt="arrow" />

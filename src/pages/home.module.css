@@ -1,5 +1,5 @@
 .homeContainer {
-  padding: 60px 20px; 
+  padding: 60px 20px;
   background-color: var(--color-background);
   display: flex;
   justify-content: center;
@@ -8,7 +8,7 @@
 
 .cardsWrapper {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   gap: 40px;
   max-width: 1200px;
   width: 100%;
@@ -18,50 +18,95 @@
   background: var(--color-white);
   padding: 40px;
   border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
-  border: 1px solid rgba(0, 0, 0, 0.05); 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .cardTitle {
-  margin-bottom: 30px;
-  font-size: 16px!important;
-  align-self:flex-start;
-  font-weight: 400 !important;
-  text-align: left !important;
+  font-size: 16px !important; 
+  font-weight: 500;
+  text-align: left; 
+  color: var(--color-font);
+  margin-bottom: 20px;
 }
 
-.cardContent {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  align-items: center;
+.cardBodyFloated {
+  width: 100%;
 }
 
 .profileImg {
-  width: 100%;
-  max-width: 200px;
+ 
+  float: left; 
+  width: 130px; 
   height: auto;
   border-radius: 8px;
   object-fit: cover;
-  margin-top: auto;
+  
+  margin: 0 15px 10px 0; 
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
 }
 
 .bioText {
-  font-family: var(--font);
+  font-family: var(--font); 
   font-size: 16px;
   line-height: 1.8;
   color: var(--color-font);
-  text-align: center;
+  text-align: left; 
+  margin: 0;
+  
 }
 
-.emptyContent {
-  min-height: 200px; 
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 25px; 
+  text-align: left;
 }
 
+.experienceItem {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.company {
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-font);
+  display: block;
+}
+
+.role {
+  font-size: 14px;
+  font-style: italic;
+  margin: 0;
+  color: #666; 
+}
+
+.bookList {
+  list-style: none; 
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+.bookList li {
+  font-size: 15px;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 15px;
+}
+
+
+.bookList li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+}
 
 @media (min-width: 992px) {
   .cardsWrapper {
-    flex-direction: row; 
+    flex-direction: row;
     align-items: stretch;
   }
 
@@ -69,17 +114,8 @@
     flex: 1;
   }
 
-  .cardContent {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-
   .profileImg {
-    width: 220px;
-    min-width: 220px;
-  }
-
-  .bioText {
-    text-align: left;
+    width: 200px; 
+    margin: 0 20px 15px 0;
   }
 }

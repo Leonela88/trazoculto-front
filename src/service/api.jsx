@@ -4,7 +4,6 @@ const api = axios.create({
   baseURL: "http://localhost:8080/api",
 });
 
-
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
   if (token) {
@@ -17,22 +16,39 @@ api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response) {
+   
+      const serverMessage = error.response.data?.message || "An error occurred";
+
       switch (error.response.status) {
         case 401:
-         
           if (!window.location.pathname.includes("/sesion")) {
-              alert("Expired session or not authorized.");
-              localStorage.removeItem("token");
-              window.location.href = "/sesion"; 
+            alert("Expired session or not authorized.");
+            localStorage.removeItem("token");
+            window.location.href = "/sesion";
           }
           break;
-        case 404:
-          console.error("n0t founded (404)");
+
+        case 400:
+        
+          alert(serverMessage);
           break;
+
+        case 404:
+          console.error("Resource not found (404)");
+          break;
+
+        case 500:
+          alert("Internal Server Error: " + serverMessage);
+          break;
+
         default:
-          console.error("Server error:", error.response.status);
+          console.error("Server error:", error.response.status, serverMessage);
       }
+    } else if (error.request) {
+      
+      alert("No response from server. Please check your connection.");
     }
+
     return Promise.reject(error);
   }
 );

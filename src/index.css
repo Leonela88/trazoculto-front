@@ -61,6 +61,5 @@ h3 {
 .caption, small, .legal { 
   font-size: 14px;
   font-weight: 300;
-  /* color: var(--color-font); */
   opacity: 0.8;
 }
