@@ -19,7 +19,7 @@ const Login = () => {
 
     try {
       await authService.login(email, password);
-
+    
       navigate("/dashboard");
     } catch (err) {
     

@@ -1,16 +1,46 @@
-# React + Vite
+# Editorial Project Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A professional web application designed for publishing houses to manage editorial workflows, services, and client relationships. This platform streamlines the creation of new projects like reading reports and style corrections through a clean, centralized interface.
 
-Currently, two official plugins are available:
+## Table of Contents
+1. [General Info](#general-info)
+2. [Technologies](#technologies)
+3. [Key Features](#key-features)
+4. [Installation](#installation)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## General Info
+***
+**Status:** In Development.
 
-## React Compiler
+This project is a dedicated tool for editors to organize and track their daily production. It features a robust project creation form that integrates client management directly into the workflow. The UI is built using a custom design system that ensures visual consistency across the entire editorial dashboard, focusing on clarity and ease of use for managing complex text-based services.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Screenshot
+![Editorial Dashboard](https://via.placeholder.com/800x450/729b88/ffffff?text=Editorial+Management+Interface)
 
-## Expanding the ESLint configuration
+## Technologies
+***
+A list of technologies and libraries used within the project:
+* [React](https://reactjs.org/): Version 18.x
+* [React Router](https://reactrouter.com/): Version 7.0 (Web Framework)
+* [Axios](https://axios-http.com/): For API communication and data fetching
+* [CSS Modules](https://github.com/css-modules/css-modules): For component-scoped styling and maintainability
+* [Google Fonts](https://fonts.google.com/): Montserrat (300, 400, 600, 700) for professional typography
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Key Features
+***
+* **Editorial Service Management:** Specialized categories for Reading Reports and Style Corrections.
+* **Secure Login System:** Protected routes and session management using credential-based authentication.
+* **Integrated Client Directory:** Real-time synchronization with the client database.
+* **Smart Modal System:** On-the-fly client registration via pop-up to avoid workflow interruption.
+* **Atomic Design Architecture:** Built using reusable UI atoms.
+* **Centralized API Services:** Decoupled logic using `apiClient` and `apiProject` for cleaner code maintenance.
+
+## Installation
+***
+To run this project locally, follow these steps:
+
+1. Clone the repository:
+```bash
+$ git clone [https://github.com/Leonela88/trazoculto-front.git]
+$ cd trazoculto-front
+$ npm run dev

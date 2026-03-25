@@ -13,6 +13,11 @@ const clientService = {
     return response.data; 
   },
 
+  getAll: async () => {
+    const response = await api.get("/clients"); 
+    return response.data; 
+  }
+
 };
 
 export default clientService;
