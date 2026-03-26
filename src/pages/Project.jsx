@@ -6,11 +6,14 @@ import dropdown from "../assets/dropdown.png";
 import styles from "./project.module.css";
 import Favicon from "../assets/favicon.png";
 import Title from "../components/atoms/Title";
+import Modal from "../components/atoms/Modal";
+import checkIcon from "../assets/check.png";
 
 const Project = () => {
   const navigate = useNavigate();
   const [clients, setClients] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const [formData, setFormData] = useState({
     projectTitle: "",
@@ -37,7 +40,9 @@ const Project = () => {
     e.preventDefault();
     try {
       await projectService.create(formData);
-      navigate("/dashboard");
+      setShowSuccess(true);
+      setTimeout(() => navigate("/dashboard"), 2000);
+      // navigate("/dashboard");
     } catch (e) { console.error(e); }
   };
 
@@ -50,6 +55,17 @@ const Project = () => {
       setNewClient({ name: "", email: "" });
     } catch (e) { console.error(e); }
   };
+
+  const services = [
+    { id: 2, label: "Informe de lectura", key: "READING_REPORT" },
+    { id: 1, label: "Corrección de estilo", key: "STYLE_CORRECTION" },
+    { id: 3, label: "Corrección ortotipográfica", key: "ORTHOTYPOGRAPHIC_CORRECTION" },
+    { id: 4, label: "Asesoría a nuevos autores", key: "NEW_AUTHORS_GUIDANCE" },
+    { id: 5, label: "Macroedición", key: "MACRO_EDITING" },
+    { id: 6, label: "Microedición", key: "MICRO_EDITING" },
+    { id: 7, label: "Otros", key: "OTHERS" }
+  ];
+
 
   return (
 
@@ -85,15 +101,16 @@ const Project = () => {
           </div>
           <div className={styles.gridRow}>
             <div className={styles.selectWrapper}>
-              <select className={styles.select} onChange={(e) => setFormData({ ...formData, editingServiceId: e.target.value })}>
+              <select
+                className={styles.select}
+                onChange={(e) => setFormData({ ...formData, editingServiceId: parseInt(e.target.value) })}
+              >
                 <option value="">Servicio:</option>
-                <option value="1">READING_REPORT</option>
-                <option value="3">STYLE_CORRECTION</option>
-                <option value="4">ORTHOTYPOGRAPHIC_CORRECTION</option>
-                <option value="5">NEW_AUTHORS_GUIDANCE</option>
-                <option value="6">MACRO_EDITING</option>
-                <option value="7">MICRO_EDITING</option>
-                <option value="8">OTHERS</option>
+                {services.map((s) => (
+                  <option key={s.id} value={s.id}>
+                    {s.label}
+                  </option>
+                ))}
               </select>
               <img src={dropdown} className={styles.arrowIcon} alt="arrow" />
             </div>
@@ -116,20 +133,21 @@ const Project = () => {
             <button type="submit" className={styles.createBtn}>Crear</button>
           </div>
         </form>
-      </div>
-      {isModalOpen && (
-        <div className={styles.overlay}>
-          <div className={styles.modal}>
-            <h3>Nuevo cliente:</h3>
-            <input className={styles.modalInput} placeholder="Nombre" onChange={(e) => setNewClient({ ...newClient, name: e.target.value })} />
-            <input className={styles.modalInput} placeholder="E-mail" onChange={(e) => setNewClient({ ...newClient, email: e.target.value })} />
-            <div className={styles.modalFooter}>
-              <button type="button" onClick={() => setIsModalOpen(false)}>Cancelar</button>
-              <button type="button" className={styles.modalBtn} onClick={handleCreateClient}>Crear</button>
-            </div>
+        <Modal isOpen={showSuccess} onClose={() => setShowSuccess(false)}>
+          <div className={styles.successBox}>
+            <p className={styles.successText}>Proyecto creado exitosamente</p>
+            <img src={checkIcon} alt="Éxito" className={styles.checkImage} />
           </div>
+        </Modal>
+      </div>
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <h3>Nuevo cliente:</h3>
+        <input className={styles.modalInput} placeholder="Nombre" onChange={(e) => setNewClient({ ...newClient, name: e.target.value })} />
+        <input className={styles.modalInput} placeholder="E-mail" onChange={(e) => setNewClient({ ...newClient, email: e.target.value })} />
+        <div className={styles.modalFooter}>
+          <button type="button" className={styles.modalBtn} onClick={handleCreateClient}>Crear</button>
         </div>
-      )}
+      </Modal>
     </div>
   );
 };
