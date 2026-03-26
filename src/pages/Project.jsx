@@ -57,8 +57,8 @@ const Project = () => {
   };
 
   const services = [
-    { id: 2, label: "Informe de lectura", key: "READING_REPORT" },
-    { id: 1, label: "Corrección de estilo", key: "STYLE_CORRECTION" },
+    { id: 1, label: "Informe de lectura", key: "READING_REPORT" },
+    { id: 2, label: "Corrección de estilo", key: "STYLE_CORRECTION" },
     { id: 3, label: "Corrección ortotipográfica", key: "ORTHOTYPOGRAPHIC_CORRECTION" },
     { id: 4, label: "Asesoría a nuevos autores", key: "NEW_AUTHORS_GUIDANCE" },
     { id: 5, label: "Macroedición", key: "MACRO_EDITING" },
