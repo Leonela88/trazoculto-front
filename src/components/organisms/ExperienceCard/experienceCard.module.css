@@ -1,0 +1,20 @@
+/* organisms/ExperienceCard/experienceCard.module.css */
+.card {
+  background: var(--color-white);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+.cardTitle {
+  font-size: 16px !important;
+  font-weight: 500;
+  text-align: left;
+  color: var(--color-font);
+  margin-bottom: 20px;
+}
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  text-align: left;
+}

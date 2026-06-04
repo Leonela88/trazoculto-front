@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import api from "../service/api";
-import Title from "../components/atoms/Title";
-import LinkButton from "../components/atoms/LinkButton";
+import Title from "../components/atoms/Title/Title";
+import LinkButton from "../components/atoms/LinkButton/LinkButton";
 import styles from "./dashboard.module.css"
-import Card from "../components/atoms/Card";
+import Card from "../components/atoms/Card/Card";
 import projectService from "../service/apiProject";
 import Favicon from "../assets/favicon.png"
 import Logout from "../assets/logout.png"

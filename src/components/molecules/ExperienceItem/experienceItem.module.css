@@ -1,0 +1,36 @@
+/* molecules/ExperienceItem/experienceItem.module.css */
+.experienceItem {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.company {
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-font);
+  display: block;
+}
+.role {
+  font-size: 14px;
+  font-style: italic;
+  margin: 0;
+  color: #666;
+}
+.bookList {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+.bookList li {
+  font-size: 15px;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 15px;
+}
+.bookList li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+}

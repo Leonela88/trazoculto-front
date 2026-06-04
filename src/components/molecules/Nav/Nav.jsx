@@ -1,5 +1,5 @@
-import AtomLink from "../atoms/AtomLink";
-import Logo from "../atoms/Logo";
+import AtomLink from "../../atoms/AtomLink/AtomLink";
+import Logo from "../../atoms/Logo/Logo";
 import styles from "./nav.module.css";
 
 const Nav = () => {

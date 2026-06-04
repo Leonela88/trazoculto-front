@@ -5,8 +5,8 @@ import clientService from "../service/apiClient";
 import dropdown from "../assets/dropdown.png";
 import styles from "./project.module.css";
 import Favicon from "../assets/favicon.png";
-import Title from "../components/atoms/Title";
-import Modal from "../components/atoms/Modal";
+import Title from "../components/atoms/Title/Title";
+import Modal from "../components/atoms/Modal/Modal";
 import checkIcon from "../assets/check.png";
 
 const Project = () => {
