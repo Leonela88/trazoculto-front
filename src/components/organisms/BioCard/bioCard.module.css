@@ -1,0 +1,37 @@
+/* organisms/BioCard/bioCard.module.css */
+.card {
+  background: var(--color-white);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+.cardTitle {
+  font-size: 16px !important;
+  font-weight: 500;
+  text-align: left;
+  color: var(--color-font);
+  margin-bottom: 20px;
+}
+.cardBodyFloated {
+  width: 100%;
+}
+.profileImg {
+  float: left;
+  width: 130px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  margin: 0 15px 10px 0;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+.bioText {
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--color-font);
+  text-align: left;
+  margin: 0;
+}
+@media (min-width: 992px) {
+  .profileImg { width: 200px; margin: 0 20px 15px 0; }
+}

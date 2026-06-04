@@ -1,5 +1,5 @@
 import styles from "./logo.module.css";
-import logoImg from "../../assets/greybr-logo-contorno.png"; 
+import logoImg from "../../../assets/greybr-logo-contorno.png"; 
 
 const Logo = () => {
   return (

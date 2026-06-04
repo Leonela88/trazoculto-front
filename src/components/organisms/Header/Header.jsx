@@ -1,6 +1,6 @@
-import Nav from "../molecules/Nav";
-import Title from "../atoms/Title";
-import LinkButton from "../atoms/LinkButton";
+import Nav from "../../molecules/Nav/Nav";
+import Title from "../../atoms/Title/Title";
+import LinkButton from "../../atoms/LinkButton/LinkButton";
 import styles from "./header.module.css";
 
 const Header = () => {

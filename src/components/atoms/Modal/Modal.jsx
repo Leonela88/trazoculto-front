@@ -1,5 +1,5 @@
 import styles from "./modal.module.css"
-import closeIcon from "../../assets/close.png"; 
+import closeIcon from "../../../assets/close.png"; 
 
 const Modal = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
