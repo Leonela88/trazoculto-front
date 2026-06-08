@@ -1,0 +1,25 @@
+.container {
+  padding: 60px 20px;
+  background-color: var(--color-background);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-font);
+  border-radius: 16px;
+  padding: 48px 40px;
+  max-width: 600px;
+  width: 100%;
+  height: fit-content;
+}
+.intro {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--color-font);
+  opacity: 0.7;
+  margin: 0 0 32px 0;
+  text-align: center;
+}

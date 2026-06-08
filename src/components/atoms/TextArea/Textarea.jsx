@@ -7,6 +7,7 @@ const Textarea = ({ id, placeholder, value, onChange, required = false, disabled
       <label htmlFor={id} className={styles.visuallyHidden}>{placeholder}</label>
       <textarea
         id={id}
+        name={id}  
         placeholder={placeholder}
         value={value}
         onChange={onChange}

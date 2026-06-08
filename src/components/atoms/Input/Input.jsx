@@ -7,6 +7,7 @@ const Input = ({ id, type = "text", placeholder, value, onChange, required = fal
       <label htmlFor={id} className={styles.visuallyHidden}>{placeholder}</label>
       <input
         id={id}
+        name={id}  
         type={type}
         placeholder={placeholder}
         value={value}
