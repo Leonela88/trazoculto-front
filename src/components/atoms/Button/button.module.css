@@ -1,0 +1,33 @@
+/* src/components/atoms/Button/button.module.css */
+.btn {
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: var(--font);
+  transition: background 0.3s ease;
+  width: 100%;
+}
+.primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+.primary:hover:not(:disabled) {
+  background-color: var(--color-primary-dark);
+}
+.ghost {
+  background: none;
+  color: var(--color-font);
+  font-size: 12px;
+  text-align: right;
+  opacity: 0.8;
+}
+.ghost:hover:not(:disabled) {
+  opacity: 1;
+}
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

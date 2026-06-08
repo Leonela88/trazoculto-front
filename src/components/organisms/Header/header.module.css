@@ -1,0 +1,56 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 80vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10vh; 
+  
+  
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+              url('/src/assets/hero-img.webp'); 
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 60px; 
+}
+
+.content {
+  padding: 0 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.buttonWrapper {
+  margin-top: 10px;
+}
+
+
+@media (min-width: 820px) {
+
+  .hero {
+    min-height: 60vh; 
+    gap: 12vh; 
+  }
+  .content {
+    padding: 0 40px;
+  }
+
+  .buttonWrapper {
+    align-self: center; 
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .hero {
+    min-height: 500px;
+    gap: 100px;
+  }
+}
