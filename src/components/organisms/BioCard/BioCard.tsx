@@ -14,13 +14,21 @@ const BioCard: React.FC = () => {
           <img src={profilePic} alt="Mariel Pannunzio" className={styles.profileImg} />
           <div className={styles.bioText}>
             <p className={styles.bioParagraph}>
+              Bienvenidos a trazoculto, un espacio donde convergen todas aquellas cosas que, anónimamente, hacemos
+              los editores para que un texto sea legible.
+            </p>
+            <p className={styles.bioParagraph}>
               Digo anónimamente porque me atrevo a afirmar que quienes no forman parte de este multiverso raras
               veces pueden percibir que un material editorial haya pasado por las manos de alguien más. Y, sin embargo,
               ahí estamos: en los márgenes, en las pausas, en las dudas, en las decisiones invisibles.
-              Porque entre lo que se dice y lo que se calla, la edición descubre.
             </p>
+               <p className={styles.bioParagraph}>
+              Porque entre lo que se dice y lo que se calla, la edición descubre.
+              </p>
+                <p className={styles.bioParagraph}>
+                   Pero empecemos por el principio.
+                </p>
             <p className={styles.bioParagraph}>
-              Pero empecemos por el principio.
               Mi nombre es Mariel Pannunzio. Crecí en el seno de una familia obrera en el conurbano norte del Gran
               Buenos Aires a finales de los años noventa. Desde que tengo memoria, siempre me refugié en los libros y la
               música. Guardo dos recuerdos puntuales de mi infancia: las noches en que mi papá llegaba de trabajar y
@@ -45,9 +53,9 @@ const BioCard: React.FC = () => {
             </p>
             <p className={styles.bioParagraph}>
               Editar es escuchar lo que el texto intenta decir.
-              Y muchas veces, hacer hablar lo que el texto aún no sabe decir.
-            </p>
-            <p className={styles.bioParagraph}>
+               </p>
+               <p className={styles.bioParagraph}>  Y muchas veces, hacer hablar lo que el texto aún no sabe decir.</p>
+                <p className={styles.bioParagraph}>
               Un texto no se crea solo con palabras: escribirlo y publicarlo no es suficiente. No. Existen múltiples tareas
               previas que permanecen ocultas para casi la totalidad del mundo lector. Yo soy, quizás, una de las primeras
               lectoras: me aseguro de que el escrito tenga sentido y se dirija al público para el que fue pensado, evito que
@@ -55,8 +63,8 @@ const BioCard: React.FC = () => {
             </p>
             <p className={styles.bioParagraph}>
               El editor no dice lo que todos saben.
-              El editor revela lo que todavía no se puede decir.
             </p>
+            <p className={styles.bioParagraph}> El editor revela lo que todavía no se puede decir.</p>
             <p className={styles.bioParagraph}>
               A lo largo de mi trayectoria tuve muchos trabajos, pero hoy combino la gestión documental en una
               consultora con la edición, enfocándome principalmente en la corrección. Habito ese territorio silencioso
@@ -64,10 +72,14 @@ const BioCard: React.FC = () => {
               corresponde.
             </p>
             <p className={styles.bioParagraph}>
-              trazoculto nace de esa convicción:
-              de que editar no es corregir errores, sino descubrir sentidos.
-              De que un texto no solo se escribe: también se escucha, se cuestiona, se pule.
-              De que la edición sucede, muchas veces, en lo invisible.
+              trazoculto nace de esa convicción:</p>
+              <p className={styles.bioParagraph}>
+              de que editar no es corregir errores, sino descubrir sentidos.</p>
+              <p className={styles.bioParagraph}>
+              De que un texto no solo se escribe: también se escucha, se cuestiona, se pule.</p>
+              <p className={styles.bioParagraph}>
+              De que la edición sucede, muchas veces, en lo invisible.</p>
+              <p className={styles.bioParagraph}>
               Porque ahí, en lo oculto, es donde el texto finalmente aprende a decir lo que vino a decir.
             </p>
           </div>
