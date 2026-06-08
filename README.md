@@ -1,6 +1,6 @@
-# Editorial Project Management System
+# Trazoculto - Editorial Services Platform
 
-A professional web application designed for publishing houses to manage editorial workflows, services, and client relationships. This platform streamlines the creation of new projects like reading reports and style corrections through a clean, centralized interface.
+Trazoculto is a full-stack web application designed for Trazoculto, an editorial services brand. The platform serves as both a professional portfolio for authors seeking editorial expertise and a management tool for the editor to streamline her workflow.
 
 ## Table of Contents
 1. [General Info](#general-info)
@@ -12,35 +12,52 @@ A professional web application designed for publishing houses to manage editoria
 ***
 **Status:** In Development.
 
-This project is a dedicated tool for editors to organize and track their daily production. It features a robust project creation form that integrates client management directly into the workflow. The UI is built using a custom design system that ensures visual consistency across the entire editorial dashboard, focusing on clarity and ease of use for managing complex text-based services.
+Trazoculto provides a comprehensive solution for managing the editorial lifecycle. The application is divided into two main areas:
 
-### Screenshot
-![Editorial Dashboard](https://via.placeholder.com/800x450/729b88/ffffff?text=Editorial+Management+Interface)
+1.  **Public Landing Page:** A professional showcase where authors can explore the editor's background, learn about specific services such as reading reports and style corrections, and initiate contact directly through an integrated form.
+2.  **Private Dashboard:** A secure management interface where the editor can log in to organize projects, track progress, and manage her client database effectively.
+
+The project focuses on delivering a polished user experience for authors while providing powerful organizational tools for the editor, all under a cohesive brand identity.
 
 ## Technologies
 ***
-A list of technologies and libraries used within the project:
-* [React](https://reactjs.org/): Version 18.x
-* [React Router](https://reactrouter.com/): Version 7.0 (Web Framework)
-* [Axios](https://axios-http.com/): For API communication and data fetching
-* [CSS Modules](https://github.com/css-modules/css-modules): For component-scoped styling and maintainability
-* [Google Fonts](https://fonts.google.com/): Montserrat (300, 400, 600, 700) for professional typography
+The frontend of this application is built with the following technologies:
+* **React** (v18.x) - UI Library
+* **TypeScript** - For type safety and better developer experience
+* **Vite** - Modern frontend build tool
+* **React Router** (v7.0) - Declarative routing for React applications
+* **CSS Modules** - Scoped styling to ensure component isolation
+* **Axios** - Promise-based HTTP client for API communication
+
+*Note: The backend is powered by a separate **Spring Boot** repository.*
 
 ## Key Features
 ***
-* **Editorial Service Management:** Specialized categories for Reading Reports and Style Corrections.
-* **Secure Login System:** Protected routes and session management using credential-based authentication.
-* **Integrated Client Directory:** Real-time synchronization with the client database.
-* **Smart Modal System:** On-the-fly client registration via pop-up to avoid workflow interruption.
-* **Atomic Design Architecture:** Built using reusable UI atoms.
-* **Centralized API Services:** Decoupled logic using `apiClient` and `apiProject` for cleaner code maintenance.
+* **Service Showcase:** Detailed presentation of editorial services (Reading Reports, Style Corrections).
+* **Biography & Experience:** A dedicated section highlighting the editor's professional trajectory.
+* **Contact Integration:** Functional contact form for authors to reach out.
+* **Secure Authentication:** Private access to the dashboard for project management.
+* **Project & Client Management:** Tools for the editor to create, view, and organize editorial tasks and client information.
+* **Atomic Design Architecture:** Built using a modular system of reusable UI components for consistency.
 
 ## Installation
 ***
-To run this project locally, follow these steps:
+To run the frontend project locally, follow these steps:
 
-1. Clone the repository:
-```bash
-$ git clone [https://github.com/Leonela88/trazoculto-front.git]
-$ cd trazoculto-front
-$ npm run dev
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Leonela88/trazoculto-front.git
+   cd trazoculto-front
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+The application will be available at `http://localhost:5173` (or the port specified by Vite). Ensure you have the backend service running if you need to test full-stack functionality.
