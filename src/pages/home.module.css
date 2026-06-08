@@ -22,5 +22,6 @@
   }
   .cardsWrapper > *:last-child {
     flex: 35;
+    align-self: flex-start;
   }
 }
