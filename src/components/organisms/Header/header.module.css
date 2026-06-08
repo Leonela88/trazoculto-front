@@ -9,7 +9,7 @@
   
   
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-              url('src/assets/hero-img.webp'); 
+              url('/src/assets/hero-img.webp'); 
   background-size: cover;
   background-position: center;
   padding-bottom: 60px; 
