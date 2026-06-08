@@ -5,17 +5,19 @@ import styles from "./nav.module.css";
 const Nav: React.FC = () => {
     return (
         <nav className={styles.nav}>
-            <AtomLink to="/" className={styles.logoLink}>
-            <div className={styles.logoGroup}> 
-            <Logo/>
-            <span className={styles.brandName}>trazoculto</span>
-            </div>
-            </AtomLink>
+            <div className={styles.navInner}>
+                <AtomLink to="/" className={styles.logoLink}>
+                    <div className={styles.logoGroup}> 
+                        <Logo/>
+                        <span className={styles.brandName}>trazoculto</span>
+                    </div>
+                </AtomLink>
 
-            <div className={styles.linksGroup}>
-                <AtomLink to="/contact">Contacto</AtomLink>
-                <span className={styles.divider}>|</span>
-                <AtomLink to="/sesion">Sesión</AtomLink>
+                <div className={styles.linksGroup}>
+                    <AtomLink to="/contact">Contacto</AtomLink>
+                    <span className={styles.divider}>|</span>
+                    <AtomLink to="/sesion">Sesión</AtomLink>
+                </div>
             </div>
         </nav>
     );

@@ -34,32 +34,32 @@ body {
 }
 
 p, span, li, label {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
 }
 
 
 h1 { 
-  font-size: 32px; 
+  font-size: 2rem; 
   font-weight: 700;
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
 }
 
 h2 { 
-  font-size: 24px; 
+  font-size: 1.5rem; 
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 h3 {
-  font-size: 20px; 
+  font-size: 1.25rem; 
   font-weight: 600;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 }
 
 
 .caption, small, .legal { 
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 300;
   opacity: 0.8;
 }

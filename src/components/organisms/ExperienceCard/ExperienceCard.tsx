@@ -24,6 +24,11 @@ const experiences: Experience[] = [
     company: "Salvat",
     role: "Adaptación regional de textos originales.",
     books: ["Cuentos de Disney"]
+  },
+   {
+    company: "Editorial Minotauro",
+    role: "Corrección de estilo y ortotipografía para nuevas ediciones de narrativa de terror y sagas de fantasía.",
+    books: ["Paperbacks from Hell" ,"Burnt Offerings", "Saga Dragonlance", "Saga Warhammer"]
   }
 ];
 

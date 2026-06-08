@@ -14,6 +14,25 @@
 }
 .cardBodyFloated {
   width: 100%;
+  position: relative;
+}
+.bioContainer {
+  position: relative;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+.collapsed {
+  max-height: 500px; /* Adjust this to match ExperienceCard height approximately */
+}
+.collapsed::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(transparent, var(--color-white));
+  pointer-events: none;
 }
 .profileImg {
   float: left;
@@ -32,6 +51,31 @@
   text-align: left;
   margin: 0;
 }
+.bioParagraph {
+  margin-bottom: 1.2em;
+}
+.bioParagraph:last-child {
+  margin-bottom: 0;
+}
+.toggleBtn {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 10px 0;
+  margin-top: 10px;
+  display: block;
+  transition: opacity 0.2s ease;
+}
+.toggleBtn:hover {
+  opacity: 0.8;
+}
 @media (min-width: 992px) {
   .profileImg { width: 200px; margin: 0 20px 15px 0; }
+  .collapsed {
+    max-height: 600px; /* Adjust for desktop height */
+  }
 }
