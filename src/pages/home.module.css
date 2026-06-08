@@ -17,4 +17,10 @@
     flex-direction: row;
     align-items: stretch;
   }
+  .cardsWrapper > *:first-child {
+    flex: 65;
+  }
+  .cardsWrapper > *:last-child {
+    flex: 35;
+  }
 }

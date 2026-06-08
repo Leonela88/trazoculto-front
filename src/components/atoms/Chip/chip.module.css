@@ -7,7 +7,8 @@
   font-size: 13px;
   color: var(--color-font);
   background: transparent;
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
   transition: border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
   cursor: default;
 }
