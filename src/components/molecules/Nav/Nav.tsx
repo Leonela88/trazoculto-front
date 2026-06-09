@@ -16,7 +16,7 @@ const Nav: React.FC = () => {
                 <div className={styles.linksGroup}>
                     <AtomLink to="/contact">Contacto</AtomLink>
                     <span className={styles.divider}>|</span>
-                    <AtomLink to="/sesion">Sesión</AtomLink>
+                    <AtomLink to="/services">Servicios</AtomLink>
                 </div>
             </div>
         </nav>
